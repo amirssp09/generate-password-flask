@@ -1,0 +1,21 @@
+# Exported from Render on 2025-08-06T08:46:57Z
+services:
+- type: web
+  name: generate-password-flask-1
+  runtime: python
+  repo: https://github.com/amirssp09/generate-password-flask
+  plan: free
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn app:app
+  autoDeployTrigger: commit
+- type: web
+  name: generate-password-flask
+  runtime: python
+  repo: https://github.com/amirssp09/generate-password-flask
+  plan: free
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn app:app
+  autoDeployTrigger: commit
+version: "1"
